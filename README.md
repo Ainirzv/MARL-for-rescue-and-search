@@ -1,102 +1,99 @@
-Here's a clean, copyable `README.md` for your GitHub repository. Simply copy and paste this into a new `README.md` file in your project:
-
-```markdown
 # 🚨 VIT Campus Rescue Simulator  
-*A multi-agent Q-learning simulation for search-and-rescue missions on a university campus*
+*A multi-agent Q-learning simulation for search-and-rescue missions in a university campus.*
 
-![Demo Screenshot](demo_screenshot.png)  
-*(Replace with actual screenshot path after uploading)*
 
-## 📖 Overview
-This Streamlit-based simulator models autonomous rescue agents navigating a 50×50 meter campus grid to locate victims while avoiding obstacles. Agents learn optimal paths using **Q-learning reinforcement learning**.
 
-## 🚀 Features
-- **Interactive Folium map** with real-time agent tracking
-- **Customizable parameters**:
-  - Victim/obstacle locations
-  - Learning rate, discount factor, exploration rate
-- **Multi-agent coordination** (5 agents by default)
-- **Battery & performance metrics** for each agent
+## 📖 Overview  
+This project simulates a **multi-agent rescue mission** on the VIT Bhopal campus using **Q-learning** (a reinforcement learning technique). Autonomous agents navigate a 50×50 meter grid to locate and rescue victims while avoiding obstacles.
 
-## ⚙️ Installation
-1. Clone the repository:
+**Key Features:**  
+- **Q-learning-based pathfinding** with customizable parameters (learning rate, exploration, etc.)  
+- **Interactive Folium map** visualizing agent paths, victims, and obstacles  
+- **Real-time metrics** (battery, distance covered, rescue count)  
+- **Streamlit web UI** for easy control and visualization  
+
+---
+
+## 🛠️ Installation  
+1. **Clone the repository:**  
    ```bash
-   git clone https://github.com/Premkolte/Rescue.git
-   cd Rescue
+   git https://github.com/Ainirzv/MARL-for-rescue-and-search.git
    ```
 
-2. Install dependencies:
+2. **Install dependencies:**  
    ```bash
    pip install streamlit numpy pandas folium streamlit-folium
    ```
 
-3. Run the simulation:
+3. **Run the simulation:**  
    ```bash
    streamlit run rescue_simulator.py
    ```
 
-## 🎮 Usage
-1. **Configure mission** in the sidebar:
-   - Set victim/obstacle locations
-   - Adjust Q-learning parameters
+---
 
-2. **Start simulation**:
-   - Click "Start Mission"
-   - Agents autonomously explore using Q-learning
+## 🎮 Usage  
+1. **Set up the mission:**  
+   - Configure victim/obstacle locations in the sidebar.  
+   - Adjust Q-learning parameters (learning rate, exploration, etc.).  
 
-3. **Monitor results**:
-   - Real-time map updates
-   - Agent status table (battery, rescues, etc.)
+2. **Start the simulation:**  
+   - Click **"Start Mission"** to begin. Agents autonomously navigate using Q-learning.  
 
-4. **Reset** anytime with "Reset Mission"
+3. **Monitor progress:**  
+   - Real-time map updates show agent paths (colored lines).  
+   - Status table tracks battery, rescues, and distance covered.  
 
-## 🧠 Technical Details
-### Q-Learning Implementation
-| Component          | Specification                          |
-|--------------------|----------------------------------------|
-| State Space        | Discrete 2-meter grid positions        |
-| Actions            | 8 directions (2m/step)                |
-| Rewards            | +100 (rescue), -50 (obstacle), +5 (moving closer) |
-| Learning Rate      | Adjustable (default: 0.1)              |
+4. **Reset:**  
+   - Click **"Reset Mission"** to clear all agents and targets.  
 
-### GPS Mapping
-- Campus centered at VIT Bhopal coordinates (23.2745°N, 77.4185°E)
-- 50×50 meter area visualized using Folium
+---
 
-## 📊 Expected Output
-After successful simulation:
+## 🧠 How It Works  
+### 🔄 Q-Learning Implementation  
+- **State Space:** Discrete 2-meter grid positions.  
+- **Actions:** 8 possible directions (2 meters per step).  
+- **Rewards:**  
+  - `+100` for rescuing a victim.  
+  - `-50` for hitting an obstacle.  
+  - `+5` for moving closer to the nearest victim.  
+
+### 🌍 GPS Mapping  
+- Campus coordinates are converted to GPS (centered at VIT Bhopal).  
+- Folium visualizes agents, paths, and obstacles on an OpenStreetMap.  
+
+---
+
+## 📊 Example Output  
+![Screenshot](https://github.com/Ainirzv/MARL-for-rescue-and-search/blob/main/marl.jpg) *(Replace with actual screenshot)*  
+
+**Status Table:**  
+| Agent    | Status      | Battery | Distance | Rescues | Position  | Time   |  
+|----------|-------------|---------|----------|---------|-----------|--------|  
+| rescue1  | 🏁 Reached  | 45.2%   | 32m      | 2       | (25, 40)  | 18.3s  |  
+
+---
+
+## 📂 File Structure  
 ```
-Mission Completion: 100%
-All campus victims rescued!
-
-Agent Status:
-| Agent    | Status      | Battery | Distance | Rescues |
-|----------|-------------|---------|----------|---------|
-| rescue1  | 🏁 Reached  | 52.1%   | 28m      | 2       |
+Rescue/
+├── rescue_simulator.py  # Main simulation code
+├── README.md            # This file
+└── requirements.txt     # Dependencies (optional)
 ```
 
-## 🤝 Contributing
-Contributions are welcome! Please open an issue or PR for:
-- Enhanced visualization
-- Algorithm improvements
-- Additional metrics
+---
 
-## 📜 License
-MIT License
-```
+## 🤝 Contributing  
+Contributions are welcome! Open an issue or submit a PR for:  
+- Improved Q-learning algorithms.  
+- Additional visualization features.  
+- Performance optimizations.  
 
-**To use this README:**
-1. Copy the entire content above
-2. Create a new file named `README.md` in your project root
-3. Paste the content
-4. Replace `demo_screenshot.png` with an actual screenshot path after uploading one
-5. Customize any sections as needed
+---
 
-The formatting uses standard GitHub Markdown and includes:
-- Clear section headers
-- Code blocks for commands
-- Tables for technical specs
-- Emoji for visual organization
-- Placeholder for your demo image
+## 📜 License  
+[MIT](https://choosealicense.com/licenses/mit/)  
 
-Would you like me to add any specific details about the Q-learning implementation or Streamlit components?
+
+
