@@ -78,8 +78,8 @@ This project simulates a **multi-agent rescue mission** on the VIT Bhopal campus
 ```
 Rescue/
 ├── app.py  # Main simulation code
-├── README.md            # This file
-└── requirements.txt     # Dependencies (optional)
+├── README.md            
+└── requirements.txt     # Dependencies 
 ```
 
 ---
