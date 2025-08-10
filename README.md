@@ -27,7 +27,7 @@ This project simulates a **multi-agent rescue mission** on the VIT Bhopal campus
 
 3. **Run the simulation:**  
    ```bash
-   streamlit run rescue_simulator.py
+   streamlit run app.py
    ```
 
 ---
@@ -77,7 +77,7 @@ This project simulates a **multi-agent rescue mission** on the VIT Bhopal campus
 ## 📂 File Structure  
 ```
 Rescue/
-├── rescue_simulator.py  # Main simulation code
+├── app.py  # Main simulation code
 ├── README.md            # This file
 └── requirements.txt     # Dependencies (optional)
 ```
